@@ -10,13 +10,13 @@ def index():
             likes = int (request.form["likes"])
             comments = int(request.form["comments"])
             shares = int(request.form["shares"])
-            followers = int(request.form["followers"])
+            viewers = int(request.form["viewers"])
 
             if followers == 0:
-                return "Jumlah followers tidak boleh 0!"
+                return "Jumlah viewers tidak boleh 0!"
             
             #Hitung Engagement Rate
-            er = ((likes + comments + shares) / followers) *100
+            er = ((likes + comments + shares) / viewers) *100
 
         except ValueError:
             return "Input tidak valid! Masukkan angka yang benar."
